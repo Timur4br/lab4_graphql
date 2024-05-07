@@ -1,0 +1,17 @@
+type Client {
+    id_client: ID!
+    name: String!
+    surname: String!
+    excluded: Boolean
+    master: Master
+}
+
+extend type Query {
+    findAllClients: [Client]!
+}
+
+extend type Mutation {
+    createClient(name: String!, surname: String!, excluded: Boolean, master: ID!): Client!
+    updateClient(id_client: ID!, name: String, surname: String, excluded: Boolean, master: ID): Client!
+    deleteClient(id_client: ID!): Boolean
+}

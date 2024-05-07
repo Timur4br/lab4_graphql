@@ -1,0 +1,18 @@
+type Master {
+    id_master: ID!
+    name: String!
+    surname: String!
+    excluded: Boolean
+}
+
+
+type Query {
+    findAllMasters: [Master]!
+}
+
+
+type Mutation {
+    createMaster(name: String!, surname: String!, excluded: Boolean): Master!
+    updateMaster(id_master: ID!, name: String, surname: String, excluded: Boolean): Master!
+    deleteMaster(id_master: ID!): Boolean
+}
